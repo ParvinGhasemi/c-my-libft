@@ -26,27 +26,34 @@ SRCS := ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c \
 		ft_isprint.c ft_isprint.c ft_strlen.c ft_memset.c \
 		ft_bzero.c ft_memcpy.c ft_memmove.c ft_tolower.c ft_toupper.c \
 		ft_strchr.c ft_strrchr.c ft_strncmp.c ft_atoi.c ft_strlcpy.c \
-		ft_strlcat.c
+		ft_strlcat.c ft_strnstr.c ft_memchr.c ft_memcmp.c ft_calloc.c \
+		ft_strdup.c
 
-OBJS := $(SRCS:.c=.o)
+OBJS := $(SRCS:%.c=obj/%.o)
 
-# BONUS_SRCS = blah.c
-# BONUS_OBJS = $(BONUS:.c=.o)
+BONUS_SRCS = blah.c
+BONUS_OBJS = $(BONUS:%.c=obj/%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): mkdir $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-%.o: %.c libft.h
+bonus: $(OBJS) $(BONUS_OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
+
+mkdir:
+	mkdir -p obj
+
+obj/%.o: %.c libft.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

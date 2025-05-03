@@ -6,13 +6,13 @@
 /*   By: pmohamma <pmohamma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 22:18:37 by pmohamma          #+#    #+#             */
-/*   Updated: 2025/04/27 18:00:54 by pmohamma         ###   ########.fr       */
+/*   Updated: 2025/05/03 19:46:54 by pmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// char *strchr(const char *s, int c)
+// char *ft_strchr(const char *s, int c)
 // {
 // 	const char	*ptr;
 // 	char		character;
@@ -32,14 +32,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	char	character;
+	size_t			i;
+	unsigned char	character;
 
-	character = (char)c;
+	character = (unsigned char)c;
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == character)
+		if ((unsigned char)s[i] == character)
 			return ((char *)&s[i]);
 		i++;
 	}

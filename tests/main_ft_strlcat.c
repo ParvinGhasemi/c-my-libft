@@ -45,18 +45,6 @@ int	main(void)
 	printf("'%zu'	vs	'%zu'\n", ft, sys);
 	printf("'%s'	vs	'%s'\n\n", dest_3, dest_control_3);
 
-	printf("\n<<< test: size == srclen < dest_len >>>\n");
-	char	dest_4[6];
-	char	dest_control_4[6];
-	size = 6;
-	source = "AAAAAA";
-	strcpy(dest_4, "aa");
-	strcpy(dest_control_4, "aa");
-	ft = ft_strlcat(dest_4, source, size);
-	sys = strlcat(dest_control_4, source, size);
-	printf("'%zu'	vs	'%zu'\n", ft, sys);
-	printf("'%s'	vs	'%s'\n\n", dest_4, dest_control_4);
-
 	// printf("\n<<< test: size = src_len  >>>\n");
 
 

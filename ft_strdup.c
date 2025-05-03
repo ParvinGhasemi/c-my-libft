@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmohamma <pmohamma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 19:43:44 by pmohamma          #+#    #+#             */
-/*   Updated: 2025/05/03 19:04:53 by pmohamma         ###   ########.fr       */
+/*   Created: 2025/05/01 22:50:59 by pmohamma          #+#    #+#             */
+/*   Updated: 2025/05/03 22:10:10 by pmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strdup(const char *s)
 {
-	const char	*str1;
-	const char	*str2;
-	size_t		i;
+	char	*dup_str;
+	int		s_len;
+	int		i;
 
-	if (n == 0)
-		return (0);
-	str1 = (const char *)s1;
-	str2 = (const char *)s2;
+	s_len = ft_strlen(s);
+	dup_str = (char *)malloc(sizeof(char) * (s_len + 1));
+	if (!dup_str)
+		return (NULL);
 	i = 0;
-	while (i < n - 1 && (unsigned char) str1[i] == (unsigned char) str2[i])
+	while (s[i])
 	{
+		dup_str[i] = s[i];
 		i++;
 	}
-	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+	dup_str[i] = '\0';
+	return (dup_str);
 }

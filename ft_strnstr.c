@@ -6,7 +6,7 @@
 /*   By: pmohamma <pmohamma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 20:18:50 by pmohamma          #+#    #+#             */
-/*   Updated: 2025/04/27 20:44:12 by pmohamma         ###   ########.fr       */
+/*   Updated: 2025/05/03 19:22:15 by pmohamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (little[0] == '\0' || len == 0)
-		return (big);
+	if (little[0] == '\0')
+		return ((char *)big);
+	if (len == 0)
+		return (NULL);
 	i = 0;
 	while (big[i] && i < len)
 	{
@@ -26,7 +28,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		while (i + j < len && little[j] && big[i + j] == little[j])
 			j++;
 		if (little[j] == '\0')
-			return (&big[i]);
+			return ((char *)&big[i]);
 		i++;
 	}
 	return (NULL);
