@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pmohamma <pmohamma@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/26 13:38:38 by pmohamma          #+#    #+#             */
-/*   Updated: 2025/05/03 22:08:19 by pmohamma         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_memmove.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: pmohamma <pmohamma@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2025/04/26 13:38:38 by pmohamma      #+#    #+#                 */
+/*   Updated: 2025/05/03 23:19:31 by parvinm.gha   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	unsigned char		*dest;
 	const unsigned char	*source;
 
+	if (dst == NULL && src == NULL && n > 0)
+		return (NULL);
 	if (dst == src || n == 0)
 		return (dst);
 	dest = (unsigned char *)dst;
