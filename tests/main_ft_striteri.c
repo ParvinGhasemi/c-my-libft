@@ -15,9 +15,20 @@ void	f(unsigned int i, char *c)
 int	main(void)
 {
 	char str[] = "a1b2c3ZZZ";
-	printf("before	->	%s\n", str);
+	printf("before	->	'%s'\n", str);
 	ft_striteri(str, f);
-	printf("after	->	%s\n", str);
+	printf("after	->	'%s'\n", str);
+
+	char *str2 = NULL;
+	printf("before	->	'%s'\n", str2);
+	ft_striteri(str2, f);
+	printf("after	->	'%s'\n", str2);
+
+	char str3[] = "";
+	printf("before	->	'%s'\n", str3);
+	ft_striteri(str3, f);
+	printf("after	->	'%s'\n", str3);
+
 	return (0);
 }
 
