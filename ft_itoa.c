@@ -20,6 +20,7 @@ static size_t	count_digits(long num)
 
 char	*ft_itoa(int n)
 {
+	
 	long	num;
 	size_t	len;
 	char	*str;
