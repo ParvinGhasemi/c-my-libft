@@ -1,9 +1,3 @@
-# Makefile: NAME, all, clean, fclean, re
-# Your Makefile must at contain at least the rules $(NAME), all, clean, fclean and re.
-# If the subject requires it, you must submit a Makefile that compiles your source
-# files to the required output with the flags -Wall, -Wextra, and -Werror, using cc.
-# Additionally, your Makefile must not perform unnecessary relinking.
-
 # To submit bonuses for your project, you must include a bonus rule in your Makefile,
 # which will add all the various headers, libraries, or functions that are not allowed in
 # the main part of the project. Bonuses must be placed in _bonus.{c/h} files, unless
@@ -27,7 +21,9 @@ SRCS := ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c \
 		ft_bzero.c ft_memcpy.c ft_memmove.c ft_tolower.c ft_toupper.c \
 		ft_strchr.c ft_strrchr.c ft_strncmp.c ft_atoi.c ft_strlcpy.c \
 		ft_strlcat.c ft_strnstr.c ft_memchr.c ft_memcmp.c ft_calloc.c \
-		ft_strdup.c ft_substr.c ft_strjoin.c
+		ft_strdup.c ft_substr.c ft_strjoin.c ft_itoa.c ft_putchar_fd.c \
+		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_strtrim.c \
+		ft_strmapi.c
 
 OBJS := $(SRCS:%.c=%.o) # or change it to: OBJS := $(SRCS:%.c=obj/%.o)
 
