@@ -26,11 +26,11 @@ int	main(void)
 	free(res);
 
 	printf("when fd is invalid: fd = -1\n");
-	ft_strtrim_fd("Hello World", -1);
+	ft_strtrim("Hello World", -1);
 	printf("[end]\n");
 
 	printf("when fd is invalid: fd = 0\n");
-	ft_strtrim_fd("Hello World", 0);
+	ft_strtrim("Hello World", 0);
 	printf("[end]\n");
 
 	return (0);
